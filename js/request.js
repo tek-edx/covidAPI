@@ -1,5 +1,6 @@
-// Async function to request  by country 
 
+
+/* Async function to get the status of covid from all countries Started 
 
 const getLatestData = async () => {
 
@@ -7,9 +8,11 @@ const getLatestData = async () => {
     const dataJson = await data.json();
 
     return dataJson;
-};
+};  
 
-//getLatestData().then((data) =>{ console.log(data)}).catch((error) => { console.log(error.message)});
+*/
+
+// Async function to API request and return the info of all countries 
 
 const getCountries = async ()=> {
 
@@ -20,7 +23,7 @@ const getCountries = async ()=> {
 
 };
 
-//getCountries().then((data) =>{console.log(data)}).catch((error) => console.log(error.message));
+// Async function to API request and return the data of the specific country
 
 const getCountryData = async (country) =>{
 
@@ -29,6 +32,53 @@ const getCountryData = async (country) =>{
     return endpointData;
 };
 
-// getCountryData('Ukrain').then((data) =>{
-//     console.log(data);
-// }).catch((error) => console.log(error.message));
+
+// Async function take an country name as argument and return country code 
+
+const searchCountry = async (countryName) => {
+
+    const countriesInfo = await getCountries();
+    let countryCode ;
+    
+    console.log(countriesInfo);
+    
+    countriesInfo.forEach((country) => {
+         
+        if(country.name === countryName){
+            console.log(country.alpha2);
+            console.log( `I am inside country name `);
+            countryCode = country.alpha2;
+        }
+
+        
+
+    });
+    
+
+
+    return countryCode;
+}
+
+// Async function to take the country  id and return the new Cases 
+const newCaseByCountry =  async (country) => {
+
+    const newCase =  await fetch(`https://covid19-api.org/api/diff/${country}`);
+    const newCaseData = await newCase.json();
+    return newCaseData;
+};
+
+
+// Async function to take the country name and return the country data and latest changes 
+
+const seriesCall = async (country) => {
+
+const getCountryId = await searchCountry(country);
+
+const getCountryDataArray= await getCountryData(getCountryId);
+const getCountryDiffArray = await newCaseByCountry(getCountryId);
+
+return [getCountryDataArray,getCountryDiffArray];
+
+
+};
+
