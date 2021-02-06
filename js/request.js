@@ -28,6 +28,10 @@ const getCountries = async ()=> {
 const getCountryData = async (country) =>{
 
     const getEndpoint = await fetch(`https://covid19-api.org/api/status/${country}`);
+
+    console.log(getEndpoint);
+    
+    
     const endpointData = await getEndpoint.json();
     return endpointData;
 };
@@ -42,7 +46,7 @@ const searchCountry = async (countryName) => {
     
     console.log(countriesInfo);
     
-    countriesInfo.forEach((country) => {
+    countriesInfo.find((country) => {
          
         if(country.name === countryName){
             console.log(country.alpha2);
