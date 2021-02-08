@@ -12,12 +12,16 @@ sumbitEvent.addEventListener('submit', (e) =>{
     country = country.trim();
      country = country.charAt(0).toUpperCase() + country.slice(1).toLowerCase()
      console.log(country);
-     inputField.
+     sumbitEvent.reset();
+   
+    displayResult.innerHTML =` <div class="donutSpinner"></div>`;
+    document.querySelector('#exampleModalLabel').innerHTML="";
     seriesCall(country)
+    
 
         .then((data) => {
             console.log(data);
-
+           
             document.querySelector('#exampleModalLabel').innerHTML =`<h2> ${country} </h2>`;
             
             displayResult.innerHTML = `<li>   
