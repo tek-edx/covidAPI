@@ -64,12 +64,12 @@ const searchCountry = async (countryName) => {
 }
 
 // Async function to take the country  id and return the new Cases 
-const newCaseByCountry =  async (country) => {
+// const newCaseByCountry =  async (country) => {
 
-    const newCase =  await fetch(`https://covid19-api.org/api/diff/${country}`);
-    const newCaseData = await newCase.json();
-    return newCaseData;
-};
+//     const newCase =  await fetch(`https://covid19-api.org/api/diff/${country}`);
+//     const newCaseData = await newCase.json();
+//     return newCaseData;
+// };
 
 
 // Async function to take the country name and return the country data and latest changes 
@@ -79,9 +79,9 @@ const seriesCall = async (country) => {
 const getCountryId = await searchCountry(country);
 
 const getCountryDataArray= await getCountryData(getCountryId);
-const getCountryDiffArray = await newCaseByCountry(getCountryId);
+// const getCountryDiffArray = await newCaseByCountry(getCountryId);
 
-return [getCountryDataArray,getCountryDiffArray];
+return getCountryDataArray;
 
 
 };

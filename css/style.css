@@ -1,0 +1,88 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 20vh;
+    width: 98vw;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    
+}
+h1{
+    padding-top: 1em;
+    color: white;
+}
+
+li{
+    list-style: none;
+}
+main{
+    text-align: center;
+    background-image: url('../asserts/virusbackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    height: 90vh;
+
+}
+
+label{
+    font-size: larger;
+}
+form > input {
+    height: 5em;
+    width: 30em;
+    margin: 2em 0em;
+    font-size: large;
+    color: red;
+    
+}
+
+
+#country-name{
+    display: block;
+}
+
+header > h1, header > img {
+    display: inline-block;
+   
+}
+img.virus-svg{
+   position: relative;
+    width: 40px;
+    height: 40px;
+    top:-5px;
+
+}
+
+footer{
+    height:10vh;
+    background-color:rgba(0,0,0,0.8);
+}
+.donutSpinner {
+    display: inline-block;
+    border: 4px solid hsl(222 100% 95%);
+    border-left-color: hsl(243 80% 62%);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: donut-spin 1.2s linear infinite;
+}
+
+@keyframes donut-spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+

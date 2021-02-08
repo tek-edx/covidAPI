@@ -4,31 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li id="recent-update">Recent Updates</li>
-                
-                <li >By Country </li>
-            </ul>
-        </nav>
+        <h1>C</h1><img class="virus-svg" src="./asserts/virus.svg"><h1>VID</h1>
+    <h1> Tracker</h1>
     </header>
     <main>
 
         <form >
-            <input id="country-name" type="text" >
-            <button type="submit">Submit</button>
+            <label for="country-name">Enter the country </label>
+            <input id="country-name" type="text" placeholder="Country" >
+            
+             <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Submit
+        </button>
         </form>
-        <ul id="display-result">
-       
 
-        </ul>
+        <!-- Button trigger modal -->
+       
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title " id="exampleModalLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    
+                        <ul id="display-result">
+                          <div class="donutSpinner"></div>
+                        
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </main>
+
+    <footer>
+        <div></div>
+    </footer>
     
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
     <script src="js/request.js"></script>
     <script src="js/dom.js"></script>
 </body>
