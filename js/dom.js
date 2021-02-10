@@ -35,7 +35,15 @@ sumbitEvent.addEventListener('submit', (e) =>{
        
 
          })
-        .catch((error) => { console.log(error.message) });
+        .catch((error) => {
+
+            displayResult.innerHTML = `<li>   
+                                               <h2>${error.message}</h2>
+                                                                
+                                        
+                                        </li>`
+
+        });
 
     
 

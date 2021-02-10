@@ -46,13 +46,13 @@ const searchCountry = async (countryName) => {
     
     console.log(countriesInfo);
     
-    countriesInfo.find((country) => {
+    countriesInfo.forEach((country) => {
          
         if(country.name === countryName){
             console.log(country.alpha2);
             console.log( `I am inside country name `);
             countryCode = country.alpha2;
-        }
+        } 
 
         
 
@@ -77,6 +77,11 @@ const searchCountry = async (countryName) => {
 const seriesCall = async (country) => {
 
 const getCountryId = await searchCountry(country);
+
+console.log(getCountryId);
+if(getCountryId == undefined){
+    throw new Error (`Please check the country name`);
+}
 
 const getCountryDataArray= await getCountryData(getCountryId);
 // const getCountryDiffArray = await newCaseByCountry(getCountryId);
