@@ -4,13 +4,30 @@
     box-sizing: border-box;
 }
 
+
+
+
 header{
-    height: 20vh;
-    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    max-width:98vw;
     background: rgba(0,0,0,0.8);
-    text-align: center;
+    
+    margin: auto;
     
 }
+
+img.virus-svg{
+   position: relative;
+    width: 30px;
+    height: 30px;
+    margin-top: 1em;
+    
+
+}
+
 h1{
     padding-top: 1em;
     color: white;
@@ -20,7 +37,10 @@ li{
     list-style: none;
 }
 main{
+    width: 98vw;
+    margin: auto;
     text-align: center;
+
     background-image: url('../asserts/virusbackground.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -32,8 +52,8 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
     height: 90vh;
+    z-index: 10;
 
 }
 
@@ -42,10 +62,12 @@ label{
 }
 form > input {
     height: 5em;
-    width: 30em;
+    width: 90%;;
     margin: 2em 0em;
-    font-size: large;
+    font-size: larger;
+    font-weight: bolder;
     color: red;
+    
     
 }
 
@@ -57,13 +79,6 @@ form > input {
 header > h1, header > img {
     display: inline-block;
    
-}
-img.virus-svg{
-   position: relative;
-    width: 40px;
-    height: 40px;
-    top:-5px;
-
 }
 
 footer{
@@ -80,9 +95,44 @@ footer{
     animation: donut-spin 1.2s linear infinite;
 }
 
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+footer p{
+    font-size: xx-small;
+    margin: 0px;
+}
+
+
 @keyframes donut-spin {
     to {
         transform: rotate(1turn);
     }
+}
+
+@media only screen and (min-width:700px){
+img.virus-svg{
+   position: relative;
+    width: 30px;
+    height: 30px;
+    top:0.5em;
+
+}
+
+form > input {
+    height: 5em;
+    width: 60%;;
+    margin: 2em 0em;
+    font-size: larger;
+    font-weight: bolder;
+    color: red;
+    
+}
+
 }
 
